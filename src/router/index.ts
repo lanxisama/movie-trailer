@@ -44,6 +44,17 @@ const routes: Array<RouteRecordRaw> = [
     path: "/movie/:id",
     name: "Movie",
     component: () => import("../views/Movie.vue")
+  },
+  // vue router 4 不会匹配 *
+  // {
+  //   path: "*",
+  //   name: "404",
+  //   component: ()=>import("../views/404.vue")
+  // }
+  {
+    path:"/:w+",
+    name:"404",
+    component:()=> import("../views/404.vue")
   }
 ];
 
